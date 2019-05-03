@@ -35,4 +35,12 @@ $(document).ready(function () {
         });
         e.preventDefault();
     });
+
+    $.ajax({
+        url: 'task-list.php',
+        type: 'GET',
+        success : function (response) {
+            console.log(response);
+        }
+    })
 });
