@@ -9,7 +9,7 @@ if(!$result){
     die('Query failed').mysqli_error($conn);
 }
 
-$json []= array();
+$json = array();
 while ($row=mysqli_fetch_array($result)) {
     $json [] = array(
         'name' => $row['name'],
