@@ -27,6 +27,7 @@
                 <div class="card">
                     <div class="card-body">
                         <form id="task-form" class="">
+                            <input type="hidden" id="task-id">
                             <div class="form-group">
                                 <input type="text" id="name" placeholder="Task Name" class="form-control">
                             </div>
@@ -44,8 +45,9 @@
             <div class="col-md-7">
                 <div class="card my-4" id="task-result">
                     <div class="card-body">
+                        <!--tasks results-->
                         <ul id="container">
-                            
+
                         </ul>
                     </div>
                 </div>
@@ -56,6 +58,7 @@
                         <td>Name</td>
                         <td>Description</td>
                     </tr>
+                    <!--End table header-->
                     <tbody id="tasks">
 
                     </tbody>
@@ -63,8 +66,6 @@
             </div>
         </div>
     </div>
-
-
 
     <script rel="javascript" type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="app.js"></script>
