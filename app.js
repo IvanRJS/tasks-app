@@ -34,7 +34,7 @@ $(document).ready(function() {
             id : $('#task-id').val()
         };
         //if editing...
-        let url = (edit === false) ? 'task-add.php':'task-edit.php';
+        let url = (edit === false) ? 'task-edit.php':'task-add.php';
         console.log(url);
         $.post(url, postData, function(response) {
            edit = (edit === false) ? true : false ;
@@ -60,9 +60,13 @@ $(document).on('click','.taskDelete', function () {
     }
 });
 
-$(document).on('click',".task-item", function () {
+
+
+//edit button
+$(document).on('click',".taskEdit", function () {
     console.log("editing");
     edit =true;
+    $('#name').focus();
     let element = $(this)[0].parentElement.parentElement;
     let id= $(element).attr('taskid');
     console.log(id);
@@ -90,13 +94,13 @@ function fetchTasks() {
             tasks.forEach(task => {
                 template += `<tr taskid="${task.id}"> 
                                 <td> ${task.id} </td>
-                                <td> <a href="#" class="task-item"> ${task.name} </a> </td>
+                                <td> <!--<a href="#" class="task-item">--> ${task.name} <!--</a>--> </td>
                                 <td> ${task.description} </td>
                                 <td> 
-                                    <button class="taskDelete btn btn-danger">
-                                        Delete
-                                    </button> 
+                                    <i class="material-icons ibutton delete taskDelete">delete</i>
+                                    <i class="material-icons ibutton edit taskEdit">edit</i>
                                 </td>
+                               
                              </tr>`
             });
             $('#tasks').html(template);

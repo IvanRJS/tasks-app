@@ -8,6 +8,9 @@
     <title>Tasks APP</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
 
 <body>
@@ -51,13 +54,16 @@
                         </ul>
                     </div>
                 </div>
-                <table class="table table-bordered table-sm">
+                <table class="table table-sm table-highlight">
                     <!--Table header-->
-                    <tr>
-                        <td>ID</td>
-                        <td>Name</td>
-                        <td>Description</td>
-                    </tr>
+                    <thead>
+                        <tr class="thead">
+                            <td>ID</td>
+                            <td>Name</td>
+                            <td>Description</td>
+                            <td></td>
+                        </tr>
+                    </thead>
                     <!--End table header-->
                     <tbody id="tasks">
 
