@@ -1,16 +1,22 @@
 <?php
-include('database.php');
+include_once('database.php');
+
+$objCon = new conexion();
+$con=$objCon->conectar();
 
 $query="select * from task";
+$stm = $objcon->prepare($query);
+$result=$objcon->execute($query);
+           
 
-$result=mysqli_query($conn,$query);
-
-if(!$result){
-    die('Query failed').mysqli_error($conn);
+//$result=$pdo->prepare($query);
+if($result){
+    header("location: error.php");
+    die('Query failed').mysqli_error($con);
 }
 
 $json = array();
-while ($row=mysqli_fetch_array($result)) {
+while ($row=$result->fetch(PDO::FETCH_ASSOC)) {
     $json [] = array(
         'name' => $row['name'],
         'description' => $row['description'],
