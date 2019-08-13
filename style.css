@@ -1,0 +1,33 @@
+table{
+  text-align: left;
+  line-height: 40px;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 2px solid  #348ed8;;
+  width: 500px;
+  margin: 50px auto;
+  border-radius: .25rem;
+}
+
+.thead{
+  background: #348ed8;
+  color: #fff;
+  border: none;
+}
+
+.ibutton {
+  color: #aaa;
+  cursor: pointer;
+  vertical-align: middle;
+  margin-top: -4px;
+}
+
+.table-highlight tbody tr:hover{
+  background-color: #C4e3e9;
+}
+.taskEdit:hover {
+  color: #0a79df;
+}
+.taskDelete:hover {
+  color: #dc2a2a;
+}
