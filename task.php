@@ -10,7 +10,7 @@ class task extends database {
  
     public function getAlltasks(){
 
-                $stmt=$this->connect()->$query("select * from task");
+                $stmt=$this->connect()->query("select * from task");
                 
                 $json = array();
                 while ($row=$stmt->fetch(PDO::FETCH_ASSOC)) {

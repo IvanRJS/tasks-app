@@ -25,7 +25,6 @@ if(isset($_POST['id'])){
     //encoding the variable into JSON and returning its value
     $jsonstring = json_encode($json[0]);
     echo $jsonstring;
-
 }
 
 

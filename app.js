@@ -60,8 +60,6 @@ $(document).on('click','.taskDelete', function () {
     }
 });
 
-
-
 //edit button
 $(document).on('click',".taskEdit", function () {
     console.log("editing");

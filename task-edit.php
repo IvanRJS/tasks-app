@@ -15,7 +15,7 @@ if(!$result){
     die('Query failed.');
 
 }
-echo "Query successfully updated.";
+echo "Task successfully updated.";
 
 }
 
