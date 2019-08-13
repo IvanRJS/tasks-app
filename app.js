@@ -83,8 +83,8 @@ function fetchTasks() {
         type: 'GET',
         success: function(response) {
 
-            let tasks = JSON.parse(response);
             //console.log(response);
+            let tasks = JSON.parse(response);
             let template = ``;
 
             tasks.forEach(task => {
