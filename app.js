@@ -83,20 +83,20 @@ function fetchTasks() {
         type: 'GET',
         success: function(response) {
 
-            //console.log(response);
             let tasks = JSON.parse(response);
+            //console.log(response);
             let template = ``;
 
             tasks.forEach(task => {
                 template += `<tr taskid="${task.id}"> 
                                 <td> ${task.id} </td>
-                                <td> <a href="#" class="task-item"> ${task.name} </a> </td>
+                                <td> <!--<a href="#" class="task-item">--> ${task.name} <!--</a>--> </td>
                                 <td> ${task.description} </td>
                                 <td> 
-                                    <button class="taskDelete btn btn-danger">
-                                        Delete
-                                    </button> 
+                                    <i class="material-icons ibutton delete taskDelete">delete</i>
+                                    <i class="material-icons ibutton edit taskEdit">edit</i>
                                 </td>
+                               
                              </tr>`
             });
             $('#tasks').html(template);
