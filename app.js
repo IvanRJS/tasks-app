@@ -34,7 +34,7 @@ $(document).ready(function() {
             id : $('#task-id').val()
         };
         //if editing...
-        let url = (edit === false) ? 'task-edit.php':'task-add.php';
+        let url = (edit === false) ? 'task-app.php':'task-edit.php';
         console.log(url);
         $.post(url, postData, function(response) {
            edit = (edit === false) ? true : false ;

@@ -2,11 +2,11 @@
 include('conexion.php');
 $json = array();
 
-$objCon = new conexion();
-$con=$objCon->conectar();
+$con = new conexion();
+$objCon=$con->conectar();
 
 $query="SELECT * FROM task";
-$result=$con->prepare($query);
+$result=$objCon->prepare($query);
 $result->execute();
            
 
