@@ -1,21 +1,27 @@
 <?php
-include('database.php');
+include('conexion.php');
 
 $search = $_POST['search'];
+
+$con=new conexion();
+$objCon= $con->conectar();
+
 
 
 if(!empty($search)){
     //query searching the given value 
-    $query = "select * from task where name like '$search%'";
+    $query = "select * from task where name like :search";
     //SELECT * FROM `task` where name like 'write%'
-    $result = mysqli_query($conn,$query);
+    $result = $objCon->prepare($query);
+    $result->bindParam('search',"%".$search."%",PDO::PARAM_STR);
+    $result->execute();
     //if there is some error ends the proccess
     if(!$result){
         die('Query error'.mysqli_error($conn));
     }
     //fetching the result as an array
     $json = array();
-    while ($row=mysqli_fetch_array($result)) {
+    while ($row=$result->fetch(PDO::FETCH_ASSOC)) {
         $json [] = array(
         //converting array into a Json type variable 
             'name'=> $row['name'],

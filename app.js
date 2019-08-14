@@ -1,5 +1,5 @@
+let edit= false;
 $(document).ready(function() {
-    let edit= false;
     fetchTasks();
     console.log('JQuery is working');
     $('#task-result').hide();
@@ -34,17 +34,18 @@ $(document).ready(function() {
             id : $('#task-id').val()
         };
         //if editing...
-        let url = (edit === false) ? 'task-add.php':'task-edit.php';
+        console.log(edit);
+        let url = (edit === true) ? 'task-edit.php':'task-add.php';
         console.log(url);
         $.post(url, postData, function(response) {
-           edit = (edit === false) ? true : false ;
+           edit =  false ;
             console.log(response);
             $('#task-form').trigger('reset');
             fetchTasks();
+            
         });
         e.preventDefault();
     });
-
 })
 
 //Delete task
