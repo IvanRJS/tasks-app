@@ -50,15 +50,33 @@ $(document).ready(function() {
 
 //Delete task
 $(document).on('click','.taskDelete', function () {
+    let element =  $(this)[0].parentElement.parentElement;
+    console.log(element);
+    let id =$(element).attr('taskid');
   
-    if(confirm("Are you sure you want to delete this task?")){
-        let element =  $(this)[0].parentElement.parentElement;
-        let id =$(element).attr('taskid');
-        $.post('task-delete.php' , {id}, function (response) {
-            console.log(response);
-            fetchTasks();
-        });
-    }
+    bootbox.confirm({
+        message: "Are you sure you want to delete this task?",
+        buttons: {
+            cancel: {
+                label: '<i class="material-icons">close</i> Cancel'
+            },
+            confirm: {
+                label: '<i class="material-icons">check</i> Confirm'
+            }
+        },
+        callback: function (result) {
+            console.log(result);
+            if(result==true){
+                $.post('task-delete.php' , {id}, function (response) {
+                console.log(response);
+                fetchTasks();
+            });
+                }
+        }
+    })
+    //if(confirm("Are you sure you want to delete this task?")){
+        
+    
 });
 
 //edit button
