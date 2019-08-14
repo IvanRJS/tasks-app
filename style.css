@@ -31,3 +31,10 @@ table{
 .taskDelete:hover {
   color: #dc2a2a;
 }
+.td-buttons{
+  width: 75px;
+}
+
+.new-task{
+  margin-top:45px;
+}
