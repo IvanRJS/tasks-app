@@ -34,7 +34,7 @@ $(document).ready(function() {
             id : $('#task-id').val()
         };
         //if editing...
-        let url = (edit === false) ? 'task-app.php':'task-edit.php';
+        let url = (edit === false) ? 'task-add.php':'task-edit.php';
         console.log(url);
         $.post(url, postData, function(response) {
            edit = (edit === false) ? true : false ;
@@ -60,9 +60,11 @@ $(document).on('click','.taskDelete', function () {
     }
 });
 
-$(document).on('click',".task-item", function () {
+//edit button
+$(document).on('click',".taskEdit", function () {
     console.log("editing");
     edit =true;
+    $('#name').focus();
     let element = $(this)[0].parentElement.parentElement;
     let id= $(element).attr('taskid');
     console.log(id);
